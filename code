@@ -1,0 +1,79 @@
+pi = 3.1415
+import math
+    
+restart = 'y'
+while restart == 'y':
+
+#allows user to select function
+    print("Select function:", flush=True)
+    print("     1. Cube", flush=True)
+    print("     2. Rectangular Prism", flush=True)
+    print("     3. Cone", flush=True)
+    print("     4. Dome", flush=True)
+    print("     5. Sphere", flush=True) 
+    print("     6. Triangular Prism", flush=True)
+    print("     7. Cylinder", flush=True)
+
+    choice = input("Enter number of desired function:\n")
+    
+#Cube
+    if choice == '1':
+    	e = float(input("Enter edge length:\n"))
+    	A=(6*e)**2
+    	print("Surface area:\n", A, flush=True)
+
+#Rectangular Prism
+    elif choice == '2':
+    	l = float(input("Enter length of prism \n"))
+    	w = float(input("Enter width of prism \n"))
+    	h = float(input("Enter height of prism \n"))
+    	A=(2*l)+(2*w)+(2*h)
+    	print("Surface area:\n", A, flush=True)
+    	
+#cone
+    elif choice == '3':
+    	r = float(input("Enter radius of cone base \n"))
+    	h = float(input("Enter height of cone \n"))
+    	a = r**2
+    	b = h**2
+    	c = math.sqrt(b+a)
+    	d = r+c
+    	e = r*d
+    	A = pi*e
+    	print("Surface area:\n", A, flush=True)
+    
+#Dome
+    elif choice == '4':
+    	r = float(input("Enter radius \n"))
+    	A=(2*pi*r**2)/2
+    	print("Surface area:\n", A, flush=True)
+	    
+#Sphere
+    elif choice == '5':
+    	r = float(input("Enter radius \n"))
+    	A=(2*pi*r**2)
+    	print("Surface area:\n", A, flush=True)
+
+#triangular prism
+    elif choice == '6':
+    	e1 = float(input("Enter bottom edge of triangle \n"))
+    	e2 = float(input("Enter leftmost side of triangle \n"))
+    	e3 = float(input("Enter rightmost side of triangle \n"))
+    	h = float(input("Enter height of prism \n"))
+    	l = float(input("Enter length of prism \n"))
+    	A=(e1*h)+((e1+e2+e3)*l)	
+    	print("Surface area:\n", A, flush=True)
+	
+#cylinder
+    elif choice == '7':
+    	r = float(input("Enter radius \n"))
+    	h = float(input("Enter height of cylinder \n"))
+    	A=2*pi*r*h+2*pi*r**2
+    	print("Surface area:\n", A, flush=True)
+
+#invalid input
+    else:
+        print("Invalid selection", flush=True)
+    
+    restart = input("Would you like to restart the calculator? \n Y/N \n").lower()
+	
